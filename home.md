@@ -22,3 +22,5 @@ Databases Engines and Tools to [install](/Tools)
 
 * Aggregations :  [Class 8](/Class_08)
 
+* Aggregations (Cont) :  [Class 9](/Class_09)
+
