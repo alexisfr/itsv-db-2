@@ -24,3 +24,6 @@ Databases Engines and Tools to [install](/Tools)
 
 * Aggregations (Cont) :  [Class 9](/Class_09)
 
+* Join Operators :  [Class 10](/Class_10)
+
+* Aggregations - Join and Misc Exercises: [Class 11](/Class_11)
