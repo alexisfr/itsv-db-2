@@ -27,3 +27,9 @@ Databases Engines and Tools to [install](/Tools)
 * Join Operators :  [Class 10](/Class_10)
 
 * Aggregations - Join and Misc Exercises: [Class 11](/Class_11)
+
+## Database Design
+* Normalization Overview :  [Class 12](/Class_12)
+
+## SQL Advanced
+*  Data Modification Statements - Exercises: [Class 13](/Class_13)
