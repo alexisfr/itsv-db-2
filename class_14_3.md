@@ -1,7 +1,7 @@
 # MySQL - Numeric Functions
 
 **Name**|**Description**
-:-----:|:-----:
+-----|-----
 ABS()|Returns the absolute value of numeric expression.
 ACOS()|Returns the arccosine of numeric expression. Returns NULL if the value is not in the range -1 to 1.
 ASIN()|Returns the arcsine of numeric expression. Returns NULL if value is not in the range -1 to 1
