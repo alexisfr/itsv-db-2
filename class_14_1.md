@@ -3,12 +3,12 @@
 | Name                  | Description                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | [ASCII()](#asciistr)               | Returns numeric value of left-most character                                                                                        |
-| BIN()                 | Returns a string representation of the argument                                                                                     |
-| BIT_LENGTH()          | Returns length of argument in bits                                                                                                  |
-| CHAR_LENGTH()         | Returns number of characters in argument                                                                                            |
-| CHAR()                | Returns the character for each integer passed                                                                                       |
-| CHARACTER_LENGTH()    | A synonym for CHAR_LENGTH()                                                                                                         |
-| CONCAT()              | Returns concatenated string                                                                                                         |
+| [BIN()](#binn)                 | Returns a string representation of the argument                                                                                     |
+| [BIT_LENGTH()](#bit_lengthstr)          | Returns length of argument in bits                                                                                                  |
+| [CHAR_LENGTH()](#char_lengthstr)        | Returns number of characters in argument                                                                                            |
+| [CHARACTER_LENGTH()](#character_lengthstr)    | A synonym for CHAR_LENGTH()                                                                                                         |
+| [CHAR()](#charn-using-charset_name)                | Returns the character for each integer passed                                                                                       |
+| [CONCAT()](#concatstr1str2)              | Returns concatenated string                                                                                                         |
 | CONV()                | Converts numbers between different number bases                                                                                     |
 | ELT()                 | Returns string at index number                                                                                                      |
 | EXPORT_SET()          | Returns a string such that for every bit set in the value bits, you get an on string and for every unset bit, you get an off string |
@@ -51,7 +51,7 @@
 Returns the numeric value of the leftmost character of the string str. Returns 0 if str is the empty string. Returns NULL if str is NULL. ASCII() works for characters with numeric values from 0 to 255.
 
 ```sql
-SELECT ASCII('2');
+mysql> SELECT ASCII('2');
 +---------------------------------------------------------+
 |                       ASCII('2')                        |
 +---------------------------------------------------------+
@@ -60,7 +60,7 @@ SELECT ASCII('2');
 ```
 
 ```sql
-SELECT ASCII('dx');
+mysql> SELECT ASCII('dx');
 +---------------------------------------------------------+
 |                       ASCII('dx')                       |
 +---------------------------------------------------------+
@@ -72,7 +72,7 @@ SELECT ASCII('dx');
 Returns a string representation of the binary value of N, where N is a longlong (BIGINT) number. This is equivalent to CONV(N,10,2). Returns NULL if N is NULL.
 
 ```sql
-SELECT BIN(12);
+mysql> SELECT BIN(12);
 +---------------------------------------------------------+
 |                          BIN(12)                        |
 +---------------------------------------------------------+
@@ -84,7 +84,7 @@ SELECT BIN(12);
 Returns the length of the string str in bits.
 
 ```sql
-SELECT BIT_LENGTH('text');
+mysql> SELECT BIT_LENGTH('text');
 +---------------------------------------------------------+
 |                   BIT_LENGTH('text')                    |
 +---------------------------------------------------------+
@@ -96,7 +96,7 @@ SELECT BIT_LENGTH('text');
 CHAR() interprets each argument N as an integer and returns a string consisting of the characters given by the code values of those integers. NULL values are skipped.
 
 ```sql
-SELECT CHAR(77,121,83,81,'76');
+mysql> SELECT CHAR(77,121,83,81,'76');
 +---------------------------------------------------------+
 |                 CHAR(77,121,83,81,'76')                 |
 +---------------------------------------------------------+
@@ -108,7 +108,7 @@ SELECT CHAR(77,121,83,81,'76');
 Returns the length of the string str, measured in characters. A multi-byte character counts as a single character. This means that for a string containing five two-byte characters, LENGTH() returns 10, whereas CHAR_LENGTH() returns 5.
 
 ```sql
-SELECT CHAR_LENGTH("text");
+mysql> SELECT CHAR_LENGTH("text");
 +---------------------------------------------------------+
 |                   CHAR_LENGTH("text")                   |
 +---------------------------------------------------------+
@@ -119,11 +119,11 @@ SELECT CHAR_LENGTH("text");
 ## CHARACTER_LENGTH(str)
 CHARACTER_LENGTH() is a synonym for CHAR_LENGTH().
 
-CONCAT(str1,str2,...)
+## CONCAT(str1,str2,...)
 Returns the string that results from concatenating the arguments. May have one or more arguments. If all arguments are non-binary strings, the result is a non-binary string. If the arguments include any binary strings, the result is a binary string. A numeric argument is converted to its equivalent binary string form; if you want to avoid that, you can use an explicit type cast, as in this example:
 
 ```sql
-SELECT CONCAT('My', 'S', 'QL');
+mysql> SELECT CONCAT('My', 'S', 'QL');
 +---------------------------------------------------------+
 |                 CONCAT('My', 'S', 'QL')                 |
 +---------------------------------------------------------+
@@ -135,7 +135,7 @@ SELECT CONCAT('My', 'S', 'QL');
 CONCAT_WS() stands for Concatenate With Separator and is a special form of CONCAT(). The first argument is the separator for the rest of the arguments. The separator is added between the strings to be concatenated. The separator can be a string, as can the rest of the arguments. If the separator is NULL, the result is NULL.
 
 ```sql
-SELECT CONCAT_WS(',','First name','Last Name' );
+mysql> SELECT CONCAT_WS(',','First name','Last Name' );
 +---------------------------------------------------------+
 |        CONCAT_WS(',','First name','Last Name' )         |
 +---------------------------------------------------------+
@@ -147,7 +147,7 @@ SELECT CONCAT_WS(',','First name','Last Name' );
 Converts numbers between different number bases. Returns a string representation of the number N, converted from base from_base to base to_base. Returns NULL if any argument is NULL. The argument N is interpreted as an integer, but may be specified as an integer or a string. The minimum base is 2 and the maximum base is 36. If to_base is a negative number, N is regarded as a signed number. Otherwise, N is treated as unsigned. CONV() works with 64-bit precision.
 
 ```sql
-SELECT CONV('a',16,2);
+mysql> SELECT CONV('a',16,2);
 +---------------------------------------------------------+
 |                     CONV('a',16,2)                      |
 +---------------------------------------------------------+
@@ -159,7 +159,7 @@ SELECT CONV('a',16,2);
 Returns str1 if N = 1, str2 if N = 2, and so on. Returns NULL if N is less than 1 or greater than the number of arguments. ELT() is the complement of FIELD().
 
 ```sql
-SELECT ELT(1, 'ej', 'Heja', 'hej', 'foo');
+mysql> SELECT ELT(1, 'ej', 'Heja', 'hej', 'foo');
 +---------------------------------------------------------+
 |            ELT(1, 'ej', 'Heja', 'hej', 'foo')           |
 +---------------------------------------------------------+
@@ -171,7 +171,7 @@ SELECT ELT(1, 'ej', 'Heja', 'hej', 'foo');
 Returns a string such that for every bit set in the value bits, you get an on string and for every bit not set in the value, you get an off string. Bits in bits are examined from right to left (from low-order to high-order bits). Strings are added to the result from left to right, separated by the separator string (the default being the comma character .,.). The number of bits examined is given by number_of_bits (defaults to 64).
 
 ```sql
-SELECT EXPORT_SET(5,'Y','N',',',4);
+mysql> SELECT EXPORT_SET(5,'Y','N',',',4);
 +---------------------------------------------------------+
 |              EXPORT_SET(5,'Y','N',',',4)                |
 +---------------------------------------------------------+
@@ -183,7 +183,7 @@ SELECT EXPORT_SET(5,'Y','N',',',4);
 Returns the index (position starting with 1) of str in the str1, str2, str3, ... list. Returns 0 if str is not found.
 
 ```sql
-SELECT FIELD('ej', 'Hej', 'ej', 'Heja', 'hej', 'foo');
+mysql> SELECT FIELD('ej', 'Hej', 'ej', 'Heja', 'hej', 'foo');
 +---------------------------------------------------------+
 |     FIELD('ej', 'Hej', 'ej', 'Heja', 'hej', 'foo')      |
 +---------------------------------------------------------+
@@ -195,7 +195,7 @@ SELECT FIELD('ej', 'Hej', 'ej', 'Heja', 'hej', 'foo');
 Returns a value in the range of 1 to N if the string str is in the string list strlist consisting of N substrings.
 
 ```sql
-SELECT FIND_IN_SET('b','a,b,c,d');
+mysql> SELECT FIND_IN_SET('b','a,b,c,d');
 +---------------------------------------------------------+
 |             SELECT FIND_IN_SET('b','a,b,c,d')           |
 +---------------------------------------------------------+
@@ -207,7 +207,7 @@ SELECT FIND_IN_SET('b','a,b,c,d');
 Formats the number X to a format like '#,###,###.##', rounded to D decimal places, and returns the result as a string. If D is 0, the result has no decimal point or fractional part.
 
 ```sql
-SELECT FORMAT(12332.123456, 4);
+mysql> SELECT FORMAT(12332.123456, 4);
 +---------------------------------------------------------+
 |                FORMAT(12332.123456, 4)                  |
 +---------------------------------------------------------+
@@ -221,7 +221,7 @@ If N_or_S is a number, returns a string representation of the hexadecimal value 
 If N_or_S is a string, returns a hexadecimal string representation of N_or_S where each character in N_or_S is converted to two hexadecimal digits.
 
 ```sql
-SELECT HEX(255);
+mysql> SELECT HEX(255);
 +---------------------------------------------------------+
 |                        HEX(255)                         |
 +---------------------------------------------------------+
@@ -230,7 +230,7 @@ SELECT HEX(255);
 ```
 
 ```sql
-SELECT 0x616263;
+mysql> SELECT 0x616263;
 +---------------------------------------------------------+
 |                        0x616263                         |
 +---------------------------------------------------------+
@@ -242,7 +242,7 @@ SELECT 0x616263;
 Returns the string str, with the substring beginning at position pos and len characters long replaced by the string newstr. Returns the original string if pos is not within the length of the string. Replaces the rest of the string from position pos if len is not within the length of the rest of the string. Returns NULL if any argument is NULL.
 
 ```sql
-SELECT INSERT('Quadratic', 3, 4, 'What');
+mysql> SELECT INSERT('Quadratic', 3, 4, 'What');
 +---------------------------------------------------------+
 |           INSERT('Quadratic', 3, 4, 'What')             |
 +---------------------------------------------------------+
@@ -254,7 +254,7 @@ SELECT INSERT('Quadratic', 3, 4, 'What');
 Returns the position of the first occurrence of substring substr in string str. This is the same as the two-argument form of LOCATE(), except that the order of the arguments is reversed.
 
 ```sql
-SELECT INSTR('foobarbar', 'bar');
+mysql> SELECT INSTR('foobarbar', 'bar');
 +---------------------------------------------------------+
 |              INSTR('foobarbar', 'bar')                  |
 +---------------------------------------------------------+
@@ -270,7 +270,7 @@ LCASE() is a synonym for LOWER().
 Returns the leftmost len characters from the string str, or NULL if any argument is NULL.
 
 ```sql
-SELECT LEFT('foobarbar', 5);
+mysql> SELECT LEFT('foobarbar', 5);
 +---------------------------------------------------------+
 |                  LEFT('foobarbar', 5)                   |
 +---------------------------------------------------------+
@@ -282,7 +282,7 @@ SELECT LEFT('foobarbar', 5);
 Returns the length of the string str, measured in bytes. A multi-byte character counts as multiple bytes. This means that for a string containing five two-byte characters, LENGTH() returns 10, whereas CHAR_LENGTH() returns 5.
 
 ```sql
-SELECT LENGTH('text');
+mysql> SELECT LENGTH('text');
 +---------------------------------------------------------+
 |                      LENGTH('text')                     |
 +---------------------------------------------------------+
@@ -298,17 +298,16 @@ If the file does not exist or cannot be read because one of the preceding condit
 As of MySQL 5.0.19, the character_set_filesystem system variable controls interpretation of filenames that are given as literal strings.
 
 ```sql
-UPDATE table_test
+mysql> UPDATE table_test
    -> SET blob_col = LOAD_FILE('/tmp/picture')
    -> WHERE id = 1;
-...........................................................
-
+```
 
 ## LOCATE(substr,str), LOCATE(substr,str,pos)
 The first syntax returns the position of the first occurrence of substring substr in string str. The second syntax returns the position of the first occurrence of substring substr in string str, starting at position pos. Returns 0 if substr is not in str.
 
 ```sql
-SELECT LOCATE('bar', 'foobarbar');
+mysql> SELECT LOCATE('bar', 'foobarbar');
 +---------------------------------------------------------+
 |                LOCATE('bar', 'foobarbar')               |
 +---------------------------------------------------------+
@@ -320,7 +319,7 @@ SELECT LOCATE('bar', 'foobarbar');
 Returns the string str with all characters changed to lowercase according to the current character set mapping.
 
 ```sql
-SELECT LOWER('QUADRATICALLY');
+mysql> SELECT LOWER('QUADRATICALLY');
 +---------------------------------------------------------+
 |                 LOWER('QUADRATICALLY')                  |
 +---------------------------------------------------------+
@@ -332,7 +331,7 @@ SELECT LOWER('QUADRATICALLY');
 Returns the string str, left-padded with the string padstr to a length of len characters. If str is longer than len, the return value is shortened to len characters.
 
 ```sql
-SELECT LPAD('hi',4,'??');
+mysql> SELECT LPAD('hi',4,'??');
 +---------------------------------------------------------+
 |                    LPAD('hi',4,'??')                    |
 +---------------------------------------------------------+
@@ -344,7 +343,7 @@ SELECT LPAD('hi',4,'??');
 Returns the string str with leading space characters removed.
 
 ```sql
-SELECT LTRIM('  barbar');
+mysql> SELECT LTRIM('  barbar');
 +---------------------------------------------------------+
 |                   LTRIM('  barbar')                     |
 +---------------------------------------------------------+
@@ -356,7 +355,7 @@ SELECT LTRIM('  barbar');
 Returns a set value (a string containing substrings separated by .,. characters) consisting of the strings that have the corresponding bit in bits set. str1 corresponds to bit 0, str2 to bit 1, and so on. NULL values in str1, str2, ... are not appended to the result.
 
 ```sql
-SELECT MAKE_SET(1,'a','b','c');
+mysql> SELECT MAKE_SET(1,'a','b','c');
 +---------------------------------------------------------+
 |                  MAKE_SET(1,'a','b','c')                |
 +---------------------------------------------------------+
@@ -371,7 +370,7 @@ MID(str,pos,len) is a synonym for SUBSTRING(str,pos,len).
 Returns a string representation of the octal value of N, where N is a longlong (BIGINT) number. This is equivalent to CONV(N,10,8). Returns NULL if N is NULL.
 
 ```sql
-SELECT OCT(12);
+mysql> SELECT OCT(12);
 +---------------------------------------------------------+
 |                        OCT(12)                          |
 +---------------------------------------------------------+
@@ -394,7 +393,7 @@ If the leftmost character of the string str is a multi-byte character, returns t
 If the leftmost character is not a multi-byte character, ORD() returns the same value as the ASCII() function.
 
 ```sql
-SELECT ORD('2');
+mysql> SELECT ORD('2');
 +---------------------------------------------------------+
 |                        ORD('2')                         |
 +---------------------------------------------------------+
@@ -409,7 +408,7 @@ POSITION(substr IN str) is a synonym for LOCATE(substr,str).
 Quotes a string to produce a result that can be used as a properly escaped data value in an SQL statement. The string is returned enclosed by single quotes and with each instance of single quote (','), backslash ('\'), ASCII NUL, and Control-Z preceded by a backslash. If the argument is NULL, the return value is the word 'NULL' without enclosing single quotes.
 
 ```sql
-SELECT QUOTE('Don\'t!');
+mysql> SELECT QUOTE('Don\'t!');
 +---------------------------------------------------------+
 |                     QUOTE('Don\'t!')                    |
 +---------------------------------------------------------+
@@ -422,7 +421,7 @@ NOTE − Please check if your installation has any bug with this function, then 
 This function performs a pattern match of expr against pattern. Returns 1 if expr matches pat; otherwise it returns 0. If either expr or pat is NULL, the result is NULL. REGEXP is not case sensitive, except when used with binary strings.
 
 ```sql
-SELECT 'ABCDEF' REGEXP 'A%C%%';
+mysql> SELECT 'ABCDEF' REGEXP 'A%C%%';
 +---------------------------------------------------------+
 |               'ABCDEF' REGEXP 'A%C%%'                   |
 +---------------------------------------------------------+
@@ -432,7 +431,7 @@ SELECT 'ABCDEF' REGEXP 'A%C%%';
 Another example is −
 
 ```sql
-SELECT 'ABCDE' REGEXP '.*';
+mysql> SELECT 'ABCDE' REGEXP '.*';
 +---------------------------------------------------------+
 |                  'ABCDE' REGEXP '.*'                    |
 +---------------------------------------------------------+
@@ -442,7 +441,7 @@ SELECT 'ABCDE' REGEXP '.*';
 Let's see one more example −
 
 ```sql
-SELECT 'new*\n*line' REGEXP 'new\\*.\\*line';
+mysql> SELECT 'new*\n*line' REGEXP 'new\\*.\\*line';
 +---------------------------------------------------------+
 |          'new*\n*line' REGEXP 'new\\*.\\*line'          |
 +---------------------------------------------------------+
@@ -454,7 +453,7 @@ SELECT 'new*\n*line' REGEXP 'new\\*.\\*line';
 Returns a string consisting of the string str repeated count times. If count is less than 1, returns an empty string. Returns NULL if str or count are NULL.
 
 ```sql
-SELECT REPEAT('MySQL', 3);
+mysql> SELECT REPEAT('MySQL', 3);
 +---------------------------------------------------------+
 |                   REPEAT('MySQL', 3)                    |
 +---------------------------------------------------------+
@@ -465,7 +464,7 @@ REPLACE(str,from_str,to_str)
 Returns the string str with all occurrences of the string from_str replaced by the string to_str. REPLACE() performs a case-sensitive match when searching for from_str.
 
 ```sql
-SELECT REPLACE('www.mysql.com', 'w', 'Ww');
+mysql> SELECT REPLACE('www.mysql.com', 'w', 'Ww');
 +---------------------------------------------------------+
 |           REPLACE('www.mysql.com', 'w', 'Ww')           |
 +---------------------------------------------------------+
@@ -477,7 +476,7 @@ SELECT REPLACE('www.mysql.com', 'w', 'Ww');
 Returns the string str with the order of the characters reversed.
 
 ```sql
-SELECT REVERSE('abcd');
+mysql> SELECT REVERSE('abcd');
 +---------------------------------------------------------+
 |                      REVERSE('abcd')                    |
 +---------------------------------------------------------+
@@ -489,7 +488,7 @@ SELECT REVERSE('abcd');
 Returns the rightmost len characters from the string str, or NULL if any argument is NULL.
 
 ```sql
-SELECT RIGHT('foobarbar', 4);
+mysql> SELECT RIGHT('foobarbar', 4);
 +---------------------------------------------------------+
 |                RIGHT('foobarbar', 4)                    |
 +---------------------------------------------------------+
@@ -501,7 +500,7 @@ SELECT RIGHT('foobarbar', 4);
 Returns the string str, right-padded with the string padstr to a length of len characters. If str is longer than len, the return value is shortened to len characters.
 
 ```sql
-SELECT RPAD('hi',5,'?');
+mysql> SELECT RPAD('hi',5,'?');
 +---------------------------------------------------------+
 |                     RPAD('hi',5,'?')                    |
 +---------------------------------------------------------+
@@ -513,7 +512,7 @@ SELECT RPAD('hi',5,'?');
 Returns the string str with trailing space characters removed.
 
 ```sql
-SELECT RTRIM('barbar   ');
+mysql> SELECT RTRIM('barbar   ');
 +---------------------------------------------------------+
 |                     RTRIM('barbar   ')                  |
 +---------------------------------------------------------+
@@ -525,7 +524,7 @@ SELECT RTRIM('barbar   ');
 Returns a soundex string from str. Two strings that sound almost the same should have identical soundex strings. A standard soundex string is four characters long, but the SOUNDEX() function returns an arbitrarily long string. You can use SUBSTRING() on the result to get a standard soundex string. All non-alphabetic characters in str are ignored. All international alphabetic characters outside the A-Z range are treated as vowels.
 
 ```sql
-SELECT SOUNDEX('Hello');
+mysql> SELECT SOUNDEX('Hello');
 +---------------------------------------------------------+
 |                   SOUNDEX('Hello')                      |
 +---------------------------------------------------------+
@@ -537,7 +536,7 @@ This is the same as SOUNDEX(expr1) = SOUNDEX(expr2).
 
 ## SPACE(N)
 ```sql
-SELECT SPACE(6);
+mysql> SELECT SPACE(6);
 +---------------------------------------------------------+
 |                     SELECT SPACE(6)                     |
 +---------------------------------------------------------+
@@ -549,7 +548,7 @@ SELECT SPACE(6);
 Compares two strings and returns 0 if both strings are equal, it returns -1 if the first argument is smaller than the second according to the current sort order otherwise it returns 1.
 
 ```sql
-SELECT STRCMP('MOHD', 'MOHD');
+mysql> SELECT STRCMP('MOHD', 'MOHD');
 +---------------------------------------------------------+
 |                 STRCMP('MOHD', 'MOHD')                  |
 +---------------------------------------------------------+
@@ -559,7 +558,7 @@ SELECT STRCMP('MOHD', 'MOHD');
 Another example is −
 
 ```sql
-SELECT STRCMP('AMOHD', 'MOHD');
+mysql> SELECT STRCMP('AMOHD', 'MOHD');
 +---------------------------------------------------------+
 |                STRCMP('AMOHD', 'MOHD')                  |
 +---------------------------------------------------------+
@@ -569,7 +568,7 @@ SELECT STRCMP('AMOHD', 'MOHD');
 Let's see one more example −
 
 ```sql
-SELECT STRCMP('MOHD', 'AMOHD');
+mysql> SELECT STRCMP('MOHD', 'AMOHD');
 +---------------------------------------------------------+
 |                STRCMP('MOHD', 'AMOHD')                  |
 +---------------------------------------------------------+
@@ -584,7 +583,7 @@ SELECT STRCMP('MOHD', 'AMOHD');
 The forms without a len argument return a substring from string str starting at position pos. The forms with a len argument return a substring len characters long from string str, starting at position pos. The forms that use FROM are standard SQL syntax. It is also possible to use a negative value for pos. In this case, the beginning of the substring is pos characters from the end of the string, rather than the beginning. A negative value may be used for pos in any of the forms of this function.
 
 ```sql
-SELECT SUBSTRING('Quadratically',5);
+mysql> SELECT SUBSTRING('Quadratically',5);
 +---------------------------------------------------------+
 |              SSUBSTRING('Quadratically',5)              |
 +---------------------------------------------------------+
@@ -593,7 +592,7 @@ SELECT SUBSTRING('Quadratically',5);
 ```
 
 ```sql
-SELECT SUBSTRING('foobarbar' FROM 4);
+mysql> SELECT SUBSTRING('foobarbar' FROM 4);
 +---------------------------------------------------------+
 |              SUBSTRING('foobarbar' FROM 4)              |
 +---------------------------------------------------------+
@@ -602,7 +601,7 @@ SELECT SUBSTRING('foobarbar' FROM 4);
 ```
 
 ```sql
-SELECT SUBSTRING('Quadratically',5,6);
+mysql> SELECT SUBSTRING('Quadratically',5,6);
 +---------------------------------------------------------+
 |              SUBSTRING('Quadratically',5,6)             |
 +---------------------------------------------------------+
@@ -614,7 +613,7 @@ SELECT SUBSTRING('Quadratically',5,6);
 Returns the substring from string str before count occurrences of the delimiter delim. If count is positive, everything to the left of the final delimiter (counting from the left) is returned. If count is negative, everything to the right of the final delimiter (counting from the right) is returned. SUBSTRING_INDEX() performs a case-sensitive match when searching for delim.
 
 ```sql
-SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2);
+mysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2);
 +---------------------------------------------------------+
 |         SUBSTRING_INDEX('www.mysql.com', '.', 2)        |
 +---------------------------------------------------------+
@@ -627,7 +626,7 @@ SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2);
 Returns the string str with all remstr prefixes or suffixes removed. If none of the specifiers BOTH, LEADING, or TRAILING is given, BOTH is assumed. remstr is optional and, if not specified, spaces are removed.
 
 ```sql
-SELECT TRIM('  bar   ');
+mysql> SELECT TRIM('  bar   ');
 +---------------------------------------------------------+
 |                     TRIM('  bar   ')                    |
 +---------------------------------------------------------+
@@ -636,7 +635,7 @@ SELECT TRIM('  bar   ');
 ```
 
 ```sql
-SELECT TRIM(LEADING 'x' FROM 'xxxbarxxx');
+mysql> SELECT TRIM(LEADING 'x' FROM 'xxxbarxxx');
 +---------------------------------------------------------+
 |            TRIM(LEADING 'x' FROM 'xxxbarxxx')           |
 +---------------------------------------------------------+
@@ -645,7 +644,7 @@ SELECT TRIM(LEADING 'x' FROM 'xxxbarxxx');
 ```
 
 ```sql
-SELECT TRIM(BOTH 'x' FROM 'xxxbarxxx');
+mysql> SELECT TRIM(BOTH 'x' FROM 'xxxbarxxx');
 +---------------------------------------------------------+
 |            TRIM(BOTH 'x' FROM 'xxxbarxxx')              |
 +---------------------------------------------------------+
@@ -654,7 +653,7 @@ SELECT TRIM(BOTH 'x' FROM 'xxxbarxxx');
 ```
 
 ```sql
-SELECT TRIM(TRAILING 'xyz' FROM 'barxxyz');
+mysql> SELECT TRIM(TRAILING 'xyz' FROM 'barxxyz');
 +---------------------------------------------------------+
 |           TRIM(TRAILING 'xyz' FROM 'barxxyz')           |
 +---------------------------------------------------------+
@@ -669,7 +668,7 @@ UCASE() is a synonym for UPPER().
 Performs the inverse operation of HEX(str). That is, it interprets each pair of hexadecimal digits in the argument as a number and converts it to the character represented by the number. The resulting characters are returned as a binary string.
 
 ```sql
-SELECT UNHEX('4D7953514C');
+mysql> SELECT UNHEX('4D7953514C');
 +---------------------------------------------------------+
 |                    UNHEX('4D7953514C')                  |
 +---------------------------------------------------------+
@@ -682,7 +681,7 @@ The characters in the argument string must be legal hexadecimal digits: '0' .. '
 Returns the string str with all characters changed to uppercase according to the current character set mapping.
 
 ```sql
-SELECT UPPER('Allah-hus-samad');
+mysql> SELECT UPPER('Allah-hus-samad');
 +---------------------------------------------------------+
 |                  UPPER('Allah-hus-samad')               |
 +---------------------------------------------------------+
