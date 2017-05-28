@@ -2,7 +2,7 @@
 
 | Name                  | Description                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [ASCII()](##ASCII)               | Returns numeric value of left-most character                                                                                        |
+| [ASCII()](##ASCIIstr)               | Returns numeric value of left-most character                                                                                        |
 | BIN()                 | Returns a string representation of the argument                                                                                     |
 | BIT_LENGTH()          | Returns length of argument in bits                                                                                                  |
 | CHAR_LENGTH()         | Returns number of characters in argument                                                                                            |
