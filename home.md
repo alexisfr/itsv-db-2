@@ -37,5 +37,5 @@ Databases Engines and Tools to [install](/Tools)
 *  Functions Class 14
   -  [MySQL - String Functions] (/Class_14_1)
   -  [MySQL - Date and Time Functions] (/Class_14_2)
-  -  [MySQL - Numeric Functions] (/Class_14_2)
+  -  [MySQL - Numeric Functions] (/Class_14_3)
 
