@@ -34,8 +34,6 @@ Databases Engines and Tools to [install](/Tools)
 ## Advanced SQL
 *  Data Modification Statements - Exercises: [Class 13](/Class_13)
 
-*  Functions Class 14
-  -  [MySQL - String Functions] (/Class_14_1)
-  -  [MySQL - Date and Time Functions] (/Class_14_2)
-  -  [MySQL - Numeric Functions] (/Class_14_3)
+*  Functions  - Exercises:  [Class 14](/Class_14)
+ 
 
