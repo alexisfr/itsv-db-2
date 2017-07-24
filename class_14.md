@@ -13,7 +13,7 @@
 
 3. Write a search query that shows all the films (title and release year) an actor was part of. Assume the actor comes from a text box introduced by hand from a web page. Make sure to "adjust" the input text to try to find the films as effectively as you think is possible. 
 
-4. Find all the rentals done in the months of October and November. Show the film title, customer name and if it was returned or not. There should be returned column with two possible values 'Yes' and 'No'.
+4. Find all the rentals done in the months of May and June. Show the film title, customer name and if it was returned or not. There should be returned column with two possible values 'Yes' and 'No'.
 
 5. Investigate CAST and CONVERT functions. Explain the differences if any, write examples based on sakila DB.
 
