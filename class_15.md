@@ -90,7 +90,15 @@ This DROP VIEW example would drop/delete the MySQL VIEW called hardware_supplier
 Exercises:
 
 1. Create a view named **list_of_customers**, it should contain the following columns:
- customer id, customer full name,  address,  zip code, phone,city, country,  status = active if active or inactive if null and store id
+  - customer id
+  - customer full name, 
+  - address
+  - zip code
+  - phone 
+  - city
+  - country
+  - status (when active column is 1 show it as 'active', otherwise is 'inactive') 
+  - store id
 
 2. Create a view named **film_details**, it should contain the following columns:
 film id,  title, description,  category,  price,  length,  rating, actors  - as a string of all the actors separated by comma. Hint use GROUP_CONCAT
