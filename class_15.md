@@ -85,3 +85,20 @@ DROP VIEW hardware_suppliers;
 ```
 
 This DROP VIEW example would drop/delete the MySQL VIEW called hardware_suppliers.
+
+
+Exercises:
+
+1. Create a view named list_of_customers, it should contain the following columns:
+ customer id, customer full name,  address,  zip code, phone,city, country,  status = active if active or inactive if null and store id
+
+2. Create a view named film_details, it should contain the following columns:
+film id,  title, description,  category,  price,  length,  rating, actors  - as a string of all the actors separated by comma
+
+3. Create view sales_by_film_category, it should return 'category' and 'total_rental' columns.
+
+4. Create a view called actor_information where it should return, actor id, first name, last name and the amount of films he/she acted on.
+
+5. Analyze view actor_info, explain the entire query and specially how the sub query works. Be very specific, take some time and decompose each part and give an explanation for each. 
+
+6. Materialized views, write a description, why they are used, alternatives, DBMS were they exist, etc. 
