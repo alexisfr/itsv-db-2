@@ -87,7 +87,7 @@ DROP VIEW hardware_suppliers;
 This DROP VIEW example would drop/delete the MySQL VIEW called hardware_suppliers.
 
 
-Exercises:
+## Exercises:
 
 1. Create a view named **list_of_customers**, it should contain the following columns:
   - customer id
