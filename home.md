@@ -36,4 +36,6 @@ Databases Engines and Tools to [install](/Tools)
 
 *  Functions  - Exercises:  [Class 14](/Class_14)
  
+* Views - Exercises: [Class 15](/Class_15)
 
+* Constraints and Triggers [Class 16](/Class_16)
