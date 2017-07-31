@@ -12,12 +12,12 @@ Needs the **employee** table (defined in the [triggers](/Class_16_2) section) cr
 2- Run the first the query 
 
   ```sql
-  UPDATE employee set employeeNumber = employeeNumber - 20
+  UPDATE employees SET employeeNumber = employeeNumber - 20
   ```
   What did happen? Explain.
   Then run this other
   ```sql
-  UPDATE employee set employeeNumber = employeeNumber + 20
+  UPDATE employees SET employeeNumber = employeeNumber + 20
   ```
   Explain this case also.
 
