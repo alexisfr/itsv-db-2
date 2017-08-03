@@ -13,21 +13,34 @@ If index helps speed up the querying data, why don’t we use indexes for all co
 You often create indexes when you create tables. MySQL automatically adds any column that is declared as **PRIMARY KEY**, **KEY** , **UNIQUE** or **INDEX** to the index. In addition, you can add indexes to the tables that already have data.
 
 In order to create indexes, you use the **CREATE INDEX**  statement. The following illustrates the syntax of the **CREATE INDEX** statement:
-
 ```sql
-CREATE [UNIQUE|FULLTEXT|SPATIAL] INDEX index_name
-USING [BTREE | HASH | RTREE] 
-ON table_name (column_name [(length)] [ASC | DESC],...)
+CREATE [UNIQUE | FULLTEXT | SPATIAL] INDEX index_name
+  [ USING BTREE | HASH ]
+  ON table_name
+    (index_col1 [(length)] [ASC | DESC], 
+     index_col2 [(length)] [ASC | DESC],
+     ...
+     index_col_n [(length)] [ASC | DESC]);
 ```
+##### UNIQUE
+Optional. The UNIQUE modifier indicates that the combination of values in the indexed columns must be unique.
+##### FULLTEXT
+Optional. The FULLTEXT modifier indexes the entire column and does not allow prefixing. InnoDB and MyISAM tables support this option.
+##### SPATIAL
+Optional. The SPATIAL modifier indexes the entire column and does not allow indexed columns to contain NULL values. InnoDB (starting in MySQL 5.7) and MyISAM tables support this option.
+##### index_name
+The name to assign to the index.
+##### table_name
+The name of the table in which to create the index.
+index_col1, index_col2, ... index_col_n
+The columns to use in the index.
+##### length
+Optional. If specified, only a prefix of the column is indexed not the entire column. For non-binary string columns, this value is the given number of characters of the column to index. For binary string columns, this value is the given number of bytes of the column to index.
 
-First, you specify the index based on the table type or storage engine:
-
-
-1.  For the **UNIQUE** index, MySQL creates a constraint that all values in the index must be unique. Duplicate NULL values are allowed in all storage engines except for BDB.
-
-2. The **FULLTEXT** index is supported only by MyISAM storage engine and only accepted on a column whose has data type is **CHAR**, **VARCHAR** or **TEXT**.
-
-3. The **SPATIAL** index supports spatial column and is available on MyISAM storage engine. In addition, the column value must not be NULL.
+##### ASC
+Optional. The index is sorted in ascending order for that column.
+##### DESC
+Optional. The index is sorted in descending order for that column.
 
 ### Example of creating index in MySQL
 
