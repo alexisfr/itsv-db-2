@@ -31,10 +31,10 @@ First, you specify the index based on the table type or storage engine:
 
 ### Example of creating index in MySQL
 
-In the sample database, you can add  officeCode column of  the employees table to the index by using the CREATE INDEX  statement as follows:
+In the sample database, you can add  postalCode column of  the customers table to the index by using the CREATE INDEX  statement as follows:
 
 ```sql
-CREATE INDEX officeCode ON employees(officeCode)
+CREATE INDEX postalCode ON customers(postalCode);
 ```
 
 ### Removing Indexes
@@ -45,8 +45,8 @@ Besides creating an index, you can also remove index by using the DROP INDEX  st
 DROP INDEX index_name ON table_name
 ```
 
-For example, if you want to drop index officeCode  of the employees  table,  which we have created above, you can execute the following query:
+For example, if you want to drop index postalCode of the employees  table,  which we have created above, you can execute the following query:
 
 ```sql
-DROP INDEX officeCode ON employees
+DROP INDEX postalCode ON customers
 ```
