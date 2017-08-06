@@ -42,3 +42,5 @@ Databases Engines and Tools to [install](/Tools)
 * [Constraints and Triggers - Exercises: Class 16](/Class_16)
 
 * [Indexes - Exercises: Class 17](/Class_17)
+
+* [Stored Procedures: Class 18](/Class_18)
