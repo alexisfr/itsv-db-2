@@ -3,9 +3,9 @@
 
 MySQL stored function returns only one value. To develop stored programs that return multiple values, you need to use stored procedures with INOUT or OUT parameters.
 
-Stored procedures that return multiple values example
+## Stored procedures that return multiple values example
 
-##### Let’s take a look at the orders table in the sample database.
+Let’s take a look at the orders table in the sample database.
 
 The following stored procedure accepts customer number and returns the total number of orders that was shipped, canceled, resolved, and disputed.
 
