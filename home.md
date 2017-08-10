@@ -44,5 +44,5 @@ Databases Engines and Tools to [install](/Tools)
 * [Indexes - Exercises: Class 17](/Class_17)
 
 * [Stored Procedures: Class 18](/Class_18)
-   * [Conditionals : Class 18_1](/Class_18_1)
+   * [Multiple Returns & Conditional: Class 18_1](/Class_18_1)
     
