@@ -1,4 +1,4 @@
-### Excercises
+### Exercises
 
 1. Write a function that returns the amount of copies of a film in sakila-db. Pass either the film id or the film name.
 2. Write a stored procedure that returns a list of customer first and last names separated by ";", that live in a certain country. You pass the country it gives you the list of people living there.
