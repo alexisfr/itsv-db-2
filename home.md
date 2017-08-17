@@ -48,4 +48,5 @@ Databases Engines and Tools to [install](/Tools)
   * [Loop in Stored Procedures: Class 18_2](/Class_18_2)
   * [Error Handling: Class 18_3](/Class_18_3)
   * [MySQL Stored Function: Class 18_4](/Class_18_4)
+  * [Exercises: Class 18_5](/Class_18_5)
     
