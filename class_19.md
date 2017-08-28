@@ -7,7 +7,7 @@ Pull image from oficial repository:
  `docker load -i mongodb.docker.img`   
     
 2. Run command to load container.  
- ` docker run --name 'mongo-test' -v path/to/files:/data/db -p 27017:27017 -d mongo`  
+ ` docker run --name mongo-test -v path/to/files:/data/db -p 27017:27017 -d mongo`  
 
 2. Start container (on reboot or stop container).  
  ` docker start mongo-test `   
