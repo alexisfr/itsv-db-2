@@ -49,4 +49,8 @@ Databases Engines and Tools to [install](/Tools)
   * [Error Handling: Class 18_3](/Class_18_3)
   * [MySQL Stored Function: Class 18_4](/Class_18_4)
   * [Exercises: Class 18_5](/Class_18_5)
+
+## Mongo DB
+
+* [How to install mongo in your pc (ubuntu or dockerized)](/Class_19)
     
