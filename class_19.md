@@ -27,3 +27,8 @@ Please, see [this link] (https://docs.mongodb.com/tutorials/install-mongodb-on-u
 1. Change file_js url, and name of connection.
 1. Run Script
 1. :umbrella_on_ground: 
+
+### OR....  
+If you install mongo shell, can try  this method:  
+
+`mongoimport --db test --collection restaurants --drop --file ~/downloads/primer-dataset.json`  
