@@ -9,4 +9,7 @@ Pull image from oficial repository:
 2. Run command to load container.  
  ` docker run -v path/to/files:/data/db -p 27017:27017 mongo`   
 
+# Ubuntu installation
+
+Please, see [this link] (https://docs.mongodb.com/tutorials/install-mongodb-on-ubuntu/).
 
