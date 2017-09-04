@@ -10,7 +10,7 @@ Documentation for CRUD Operations in https://docs.mongodb.com/manual/crud/
 
  **Create, Read, Update, Delete**
 
-Use this dataset:
+Use this dataset: https://raw.githubusercontent.com/jasonmimick/learn-mongodb/master/sampledata.zip
 
 This exercise will help you practice your ability to query and mondify data in MongoDB.
 
