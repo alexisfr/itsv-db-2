@@ -14,4 +14,4 @@ We try translate class 4 exercises to mongodb. Please download sakila db json's 
 
 ## Solutions:  
 1.  ` db.getCollection('films').find({ Rating:'PG-13' },{ Title:  1, 'Special Features':1})`  
-
+1.  Try you...
