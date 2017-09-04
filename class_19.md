@@ -16,6 +16,22 @@ Pull image from oficial repository:
 
 Please, see [this link] (https://docs.mongodb.com/tutorials/install-mongodb-on-ubuntu/).  
 
+# Install tools
+
+On ubuntu 16.04:
+
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6  
+
+echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list  
+
+sudo apt-get update  
+
+sudo apt-get install mongodb-org-shell  mongodb-org-tools 
+```
+ 
+
+
 # Install dataset  
 1. Download ide from (this link)[http://networking.itsv.edu.ar/descargas/mongo/mongobooster-4.0.1-x86_64.AppImage]  
    Change linux permissions `chmod +x mongobooster-4.0.1-x86_64.AppImage`  
