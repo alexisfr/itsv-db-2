@@ -55,3 +55,7 @@ Databases Engines and Tools to [install](/Tools)
 * [How to install mongo in your pc (ubuntu or dockerized)](/Class_19)
 * [Mongo Exercises](/Class_20)
     
+## Key Value DB
+
+* [Redis](/Class_21)
+    
