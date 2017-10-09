@@ -3,7 +3,7 @@
 1 - Install Redis with docker. 
     
 *  Add port mapping.
-*   Add volumes.    
+*  Set up a bindmount volume.    
 *   Put the command used as result of this exercise.
     
 2 - Connect to Redis and run basic commands
