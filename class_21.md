@@ -30,4 +30,4 @@
 
 11 - Investigate Benchmarks - Run some
 
-12 - Write a driver application (client) on Python, do some operations with it.
+12 - Write a driver application (client) in Python, do some operations with it.
