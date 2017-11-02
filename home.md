@@ -59,3 +59,6 @@ Databases Engines and Tools to [install](/Tools)
 
 * [Redis](/Class_21)
     
+## OLAP
+
+* [Vertica DB](/Class_22)
