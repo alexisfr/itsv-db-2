@@ -66,17 +66,6 @@ ORDER BY s.product_key;
 
 
 -- 7
--- Multicolumn subquery
--- Which products have the highest cost, 
--- grouped by category and department 
-
-
--- 8
--- Using pre-join projections to answer subqueries
--- between online_sales_fact and online_page_dimension
-
-
--- 9
 -- Equi join
 -- Joins online_sales_fact table and the call_center_dimension 
 -- table with the ON clause
