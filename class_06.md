@@ -8,7 +8,7 @@
  7. List the actors that acted in both 'BETRAYED REAR' and 'CATCH AMISTAD'
  8. List all the actors that didn't work in 'BETRAYED REAR' or 'CATCH AMISTAD'	
 
-
+<!--
 ## Results
 
 ```sql 
@@ -120,3 +120,4 @@ SELECT actor_id, first_name, last_name
 			          AND title IN ('BETRAYED REAR', 'CATCH AMISTAD')
 			          AND actor.actor_id = a.actor_id);		       
 ```
+-->
