@@ -9,7 +9,7 @@
 - Alter table add foreign keys to film_actor table 
 - Insert some actors, films and who acted in each film
 
-<> ## Results
+<>  ## Results
 
 ```sql
 CREATE TABLE actor (
