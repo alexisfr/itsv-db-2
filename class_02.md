@@ -9,6 +9,7 @@
 - Alter table add foreign keys to film_actor table 
 - Insert some actors, films and who acted in each film
 
+<!--
 ## Results 
 
 ```sql
@@ -45,3 +46,4 @@ last_update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMES
 ALTER TABLE ADD
 CONSTRAINT fk_film_actor_film FOREIGN KEY (film_id) REFERENCES film (film_id) ON DELETE RESTRICT ON UPDATE CASCADE
 ```
+-->
