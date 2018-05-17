@@ -23,4 +23,9 @@
      - (optional) Use concat to show city and country and manager first and last name
 
 8. Show sales per film rating
+
+9. Which actor has appeared in the most films?
+
+10. Which film categories have the larger film duration (comparing average)?
+   - Order by average in descending order
  
