@@ -17,3 +17,10 @@
     - customer (first, last) name, store id, film title, 
     - when the film was rented and returned for each of these customers
     - order by store_id, customer last_name
+
+7. Show sales per store 
+     - show store citi, country, manager info and total sales
+     - (optional) Use concat to show city and country and manager first and last name
+
+8. Show sales per film rating
+ 
