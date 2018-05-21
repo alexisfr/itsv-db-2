@@ -32,23 +32,26 @@
 ## Results
 
 -- 1
+```sql
 SELECT COUNT(city_id), country.country, country.country_id
   FROM country 
   	INNER JOIN city USING (country_id)
 GROUP BY country.country,country.country_id
 ORDER BY country.country,country.country_id;
-
+```
 -- 2
 
+```sql
 SELECT COUNT(city_id), country.country
   FROM country 
   	INNER JOIN city USING (country_id)
 GROUP BY country.country
 	HAVING COUNT(*) > 10
 ORDER BY 1 DESC;
-
+```
 -- 3
 
+```sql
 SELECT customer.first_name, customer.last_name, address.address, COUNT(rental.rental_id), SUM(payment.amount)
   FROM customer 
   	INNER JOIN address USING (address_id)
@@ -56,23 +59,27 @@ SELECT customer.first_name, customer.last_name, address.address, COUNT(rental.re
   	INNER JOIN payment USING(rental_id)
 GROUP BY 1, 2, 3
 ORDER BY 5 DESC;
-
+```
 -- 4
+
+```sql
 
 SELECT film.title
   FROM film
 WHERE film.film_id NOT IN 
 	(SELECT film_id FROM inventory);
-	
+```	
 -- 5
+```sql
 
 SELECT film.title, inventory_id, rental.rental_id
   FROM film 
   	INNER JOIN inventory USING (film_id)
   	LEFT OUTER JOIN rental USING (inventory_id)
 WHERE rental.rental_id IS NULL;
-
+```
 -- 6
+```sql
 
 SELECT customer.first_name, customer.last_name, inventory.store_id, film.title, rental.rental_date, rental.return_date
   FROM film
@@ -81,12 +88,13 @@ SELECT customer.first_name, customer.last_name, inventory.store_id, film.title, 
   	INNER JOIN customer USING (customer_id)
 WHERE rental.return_date IS NOT NULL
 ORDER BY inventory.store_id, customer.last_name;
-
+```
 -- 7
+```sql
 
 SELECT
-CONCAT(c.city, _utf8',', cy.country) AS store
-, CONCAT(m.first_name, _utf8' ', m.last_name) AS manager
+CONCAT(c.city, ',', cy.country) AS store
+, CONCAT(m.first_name,' ', m.last_name) AS manager
 , SUM(p.amount) AS total_sales
 FROM payment AS p
 INNER JOIN rental AS r ON p.rental_id = r.rental_id
@@ -96,28 +104,34 @@ INNER JOIN address AS a ON s.address_id = a.address_id
 INNER JOIN city AS c ON a.city_id = c.city_id
 INNER JOIN country AS cy ON c.country_id = cy.country_id
 INNER JOIN staff AS m ON s.manager_staff_id = m.staff_id
-GROUP BY s.store_id
+GROUP BY cy.country, c.city,m.first_name, m.last_name
 ORDER BY cy.country, c.city;
-
+```
 -- 8
+```sql
 SELECT rating, sum(amount)
 from film
 inner join inventory using (film_id)
 inner join rental using(inventory_id)
 inner join payment using(rental_id)
 group by 1
-
+```
 -- 9
+
+```sql
 select actor.actor_id, actor.first_name, actor.last_name,
        count(actor_id) as film_count
 from actor join film_actor using (actor_id)
 group by actor_id
 order by film_count desc
 limit 1;
-
+```
 -- 10
+
+```sql
 select category.name, avg(length)
 from film join film_category using (film_id) join category using (category_id)
 group by category.name
 having avg(length) > (select avg(length) from film)
 order by avg(length) desc;
+```
