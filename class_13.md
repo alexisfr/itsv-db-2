@@ -264,8 +264,8 @@ Check which fields are mandatory and which ones can be ommited (use default valu
     - For address use an existing address. The one that has the biggest address_id in 'United States'
     
 2. Add a rental
-   - Make easy to select any film title. I.e. I sould be able to put 'film tile' in the where, and not the id.
-   - Do not check if the film is already rented, just use any from the inventory, e.g. the one with higest id.
+   - Make easy to select any film title. I.e. I should be able to put 'film tile' in the where, and not the id.
+   - Do not check if the film is already rented, just use any from the inventory, e.g. the one with highest id.
    - Select any staff_id from Store 2. 
    
 3. Update film year based on the rating
