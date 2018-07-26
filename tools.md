@@ -10,7 +10,7 @@ Multi-platform database tool [DBeaver](http://dbeaver.jkiss.org/)
 ```bash
 $ sudo docker kill mysql
 $ sudo docker rm mysql
-$ sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 -v /home/user/sqkiladb:/var/lib/mysql mysql:latest
+$ sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 -v /home/user/sqkiladb:/var/lib/mysql mysql:5.7
 
 $ sudo docker exec -it mysql mysql -uroot -p
 
