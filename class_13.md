@@ -289,3 +289,148 @@ Check which fields are mandatory and which ones can be ommited (use default valu
    - Use sub-queries for everything, except for the inventory id that can be used directly in the queries.
 
 Once you're done. Restore the database data using the populate script from class 3.
+
+## Results:
+
+```
+-- 1
+
+INSERT INTO sakila.customer
+(store_id, first_name, last_name, email, address_id, active)
+VALUES(1, 'Pepe', 'Suarez', 'pepesuarez@gmail.com', 599, 1);
+
+
+#El max da 599
+SELECT MAX(a.address_id)
+FROM address a
+WHERE (SELECT c.country_id
+		FROM country c, city c1
+		WHERE c.country = "United States"
+		AND c.country_id = c1.country_id
+		AND c1.city_id = a.city_id);
+		
+
+SELECT *
+FROM customer
+WHERE last_name = "Suarez";
+
+
+
+-- 2
+
+INSERT INTO sakila.rental
+(rental_date, inventory_id, customer_id, return_date, staff_id)
+SELECT CURRENT_TIMESTAMP, 
+		(SELECT MAX(r.inventory_id)
+		 FROM inventory r
+		 INNER JOIN film USING(film_id)
+		 WHERE film.title = "ARABIA DOGMA"
+		 LIMIT 1), 
+		 601, -- Find an user here
+		 NULL,
+		 (SELECT staff_id
+		  FROM staff
+		  INNER JOIN store USING(store_id)
+		  WHERE store.store_id = 2
+		  LIMIT 1);
+
+SELECT MAX(r.inventory_id)
+FROM inventory r
+INNER JOIN film USING(film_id)
+WHERE film.title = "ALIEN CENTER";
+
+SELECT staff_id
+FROM staff
+INNER JOIN store USING(store_id)
+WHERE store.store_id = 2
+LIMIT 1;
+
+
+-- 3
+
+UPDATE sakila.film
+SET release_year='2001'
+WHERE rating = "G";
+
+UPDATE sakila.film
+SET release_year='2005'
+WHERE rating = "PG";
+
+UPDATE sakila.film
+SET release_year='2010'
+WHERE rating = "PG-13";
+
+UPDATE sakila.film
+SET release_year='2015'
+WHERE rating = "R";
+
+UPDATE sakila.film
+SET release_year='2020'
+WHERE rating = "NC-17";
+
+
+-- 4
+
+#Rental id devuelto 11496 , el precio 2,99, el customer = 155, staff = 1
+SELECT rental_id, rental_rate, customer_id, staff_id
+FROM film
+INNER JOIN inventory USING(film_id)
+INNER JOIN rental USING(inventory_id)
+WHERE rental.return_date IS NULL
+LIMIT 1;
+
+#Hago un update a rental para decir que la pelicula fue devuelta
+UPDATE sakila.rental
+SET  return_date=CURRENT_TIMESTAMP
+WHERE rental_id=11496;
+
+
+-- 6
+
+SELECT inventory_id, rental_id, store_id
+FROM film
+INNER JOIN inventory USING(film_id)
+INNER JOIN rental USING(inventory_id)
+WHERE rental.return_date IS NOT NULL
+and store_id = 2
+
+-- inventory_id 
+
+INSERT INTO sakila.rental
+(rental_date, inventory_id, customer_id, return_date, staff_id)
+--
+
+SELECT CURRENT_TIMESTAMP,        
+		t1.inventory_id, 
+        customer.customer_id,
+        NULL,
+		t1.staff_id
+FROM customer
+INNER JOIN (SELECT store_id, staff_id, inventory_id
+		  FROM staff
+		  INNER JOIN store USING(store_id)
+		  INNER JOIN inventory USING(store_id)
+		  WHERE inventory_id = 10) t1
+     USING(store_id)
+ORDER BY customer_id DESC
+LIMIT 1;
+
+--
+INSERT INTO sakila.payment
+(customer_id, staff_id, rental_id, amount, payment_date, last_update)
+--
+
+
+SELECT r.customer_id, 
+       r.staff_id, 
+       r.rental_id,
+      (SELECT f.rental_rate 
+       from film f
+       inner join inventory i USING (film_id)
+       WHERE i.inventory_id = r.inventory_id ) as amount,
+       r.rental_date   
+FROM rental r
+WHERE return_date IS NULL
+AND inventory_id = 10;
+
+```
