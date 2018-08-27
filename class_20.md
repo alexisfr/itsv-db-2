@@ -12,6 +12,3 @@ We try translate class 4 exercises to mongodb. Please download sakila db json's 
 8. Get all the films that are available in store id 2 and the manager first/last name of this store (the manager will appear in all the rows).
 
 
-## Solutions:  
-1.  ` db.getCollection('films').find({ Rating:'PG-13' },{ Title:  1, 'Special Features':1})`  
-1.  Pitri try...
