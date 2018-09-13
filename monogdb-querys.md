@@ -57,7 +57,15 @@ In the following example, the compound query document selects all documents in t
 
 ### In clause
 
-> db.films.find({Rating: {$in:["G","PG"]}}) 
+> `db.films.find({Rating: {$in:["G","PG"]}})`
 
-## Select one field
-`db.films.find({}, {title:1})`
+## Return the Specified Fields and the _id Field Only
+A projection can explicitly include several fields by setting the <field> to 1 in the projection document. The following operation returns all documents that match the query. In the result set, only the title and, by default, the _id fields return in the matching documents.
+
+ > `db.films.find({Rating: {$in:["G","PG"]}} , {Title:1} )`
+
+If you need remove _id field, setting **_id** to 0:
+
+ > `db.films.find({Rating: {$in:["G","PG"]}} , {Title:1, _id:0} )`
+
+
