@@ -55,6 +55,7 @@ Databases Engines and Tools to [install](/Tools)
 ## Mongo DB
 
 * [How to install mongo in your pc (ubuntu or dockerized)](/Class_19)
+* [Mongo Queryset](/monogdb-querys)
 * [Mongo Exercises](/Class_20)
     
 ## Key Value DB
