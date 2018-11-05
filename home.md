@@ -64,6 +64,6 @@ Databases Engines and Tools to [install](/Tools)
     
 ## OLAP
 
-*[Dimensional Model](/Multidimension)
+* [Dimensional Model](/Multidimension)
 
 * [Vertica DB](/Class_22)
