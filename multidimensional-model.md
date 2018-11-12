@@ -156,6 +156,6 @@ ORDER BY
 
 8. Generate a report with Internet Sales sub total, grand total per year and month.
 
-9. TBD
+9. Generate a report with the amount of "Pedals" and "Tires and Tubes" category of products in the inventory. Also with the amount of in and outs of each of them on the second half of the year 2006.
 
-10. TBD
+10. Generate a report with the amount of calls, automatic responses and issues raised by the call center operators. On working days during the morning shift, from the 20th working week until the end of the year 2007.
