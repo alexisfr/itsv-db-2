@@ -417,11 +417,12 @@ INSERT INTO `employees`(`employeeNumber`,`lastName`,`firstName`,`extension`,`ema
 
 UPDATE employees set employeeNumber = employeeNumber - 20;
 
--- This query doesn't work because it runs on cascade.
--- The distance between the last 2 entrys' employeeNumber is exactly 20, /
--- so if it added 20 to the second entry, its value would be the same than the 3rd column's entry 
+-- Esa querie funciona y actualiza todas las rows, porque el motor la ejecuta sequencialmente el update, por lo que aunque la distancia entre 2 ids es 20 el update ocurre primero en la fila del medio y por lo tanto nunca coliciona.
 
 UPDATE employees set employeeNumber = employeeNumber + 20;
+
+-- En este caso, cuando la fila del medio actualiza su valor, este es el mismo que la de la tercer fila por lo tanto tanto no puede hacer el update por el constraint de la primary key.
+
 ```
 
 ```sql
