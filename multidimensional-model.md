@@ -51,7 +51,7 @@ Foreign key to dimension table
 
 The star schema is the simplest type of Data Warehouse schema. It is known as star schema as its structure resembles a star. In the Star schema, the center of the star can have one fact tables and numbers of associated dimension tables. It is also known as Star Join Schema and is optimized for querying large data sets.
 
-![star-schema](/uploads/cdd397bde5da812ad9c5499391506e2d/star-schema.png)
+![star-schema](/images/star-schema.png)
 
 ## Introduction to the PostgreSQL **CUBE**
 PostgreSQL CUBE is a subclause of the GROUP BY clause. The CUBE allows you to generate multiple grouping sets.
@@ -72,7 +72,7 @@ ORDER BY
     segment;
 ```
 
-![cube-example](/uploads/8c43996c5fcbd114ca66f0ba68aebb75/cube-example.png)
+![cube-example](/images/cube-example.png)
 
 The following query performs a partial cube:
 
@@ -91,7 +91,7 @@ ORDER BY
     segment;
 ```
 
-![partial-cube-example](/uploads/eb4d2c85b49a6588b0db51baee0d9d7b/partial-cube-example.png)
+![partial-cube-example](/images/partial-cube-example.png)
 
 ## Introduction to the PostgreSQL **ROLLUP**
 
@@ -116,7 +116,7 @@ ORDER BY
     segment;
 ```
 
-![rollup-example](/uploads/6f530cba362a01728d840761ecaa7de4/rollup-example.png)
+![rollup-example](/images/rollup-example.png)
 
 The following statement performs a partial roll-up:
 
@@ -135,7 +135,7 @@ ORDER BY
     brand;
 ```
 
-![partial-rollup-example](/uploads/75086271920c3d49d51834c0a65ca287/partial-rollup-example.png)
+![partial-rollup-example](/images/partial-rollup-example.png)
 
 
 ## Excersices

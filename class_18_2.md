@@ -201,7 +201,7 @@ Where finished is a variable to indicate that the cursor has reached the end of 
 
 The following diagram illustrates how MySQL cursor works.
 
-![mysql-cursor](/uploads/07d620c4839fab99ed04581f53f7b517/mysql-cursor.png)
+![mysql-cursor](/images/mysql-cursor.png)
 
 ## MySQL Cursor Example
 

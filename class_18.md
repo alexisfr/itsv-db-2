@@ -2,7 +2,7 @@
 
 A stored procedure is a segment of declarative SQL statements stored inside the database catalog. A stored procedure can be invoked by triggers, other stored procedures, and applications such as Java, Python, PHP, etc.
 
-![mysql-stored-procedure1](/uploads/0f6d3db8a0f6b1cb055ae925e7f447f5/mysql-stored-procedure1.jpg)
+![mysql-stored-procedure1](/images/mysql-stored-procedure1.jpg)
 
 A stored procedure that calls itself is known as a recursive stored procedure. Most database management systems support recursive stored procedures. However, MySQL does not support it very well. You should check your version of MySQL database before implementing recursive stored procedures in MySQL.
 

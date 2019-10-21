@@ -156,7 +156,7 @@ END$$
 
 The following flowchart demonstrates the logic of determining customer level.
 
-![mysql-if-statement-flow-chart](/uploads/86702aec573bc5f2599909a5a0fc15c0/mysql-if-statement-flow-chart.png)
+![mysql-if-statement-flow-chart](/images/mysql-if-statement-flow-chart.png)
 
 
 # MySQL CASE Statement
@@ -219,7 +219,7 @@ How the stored procedure works.
 
 The following flowchart demonstrates the logic of determining shipping period.
 
-![mysql-case-statement](/uploads/ae405f0d82bf743362ab77ece35ff3e1/mysql-case-statement.png)
+![mysql-case-statement](/images/mysql-case-statement.png)
 
 The following is the test script for the stored procedure above:
 

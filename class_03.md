@@ -2,7 +2,7 @@
 
 Review the diagram.
 
-![sakila-tables](/uploads/c96ed6d838cfa072dc8fbe0a5effd9b9/sakila-tables.png)
+![sakila-tables](/images/sakila-tables.png)
 
 # DML
 Data manipulation language operations are:
