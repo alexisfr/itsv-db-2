@@ -51,7 +51,7 @@ Foreign key to dimension table
 
 The star schema is the simplest type of Data Warehouse schema. It is known as star schema as its structure resembles a star. In the Star schema, the center of the star can have one fact tables and numbers of associated dimension tables. It is also known as Star Join Schema and is optimized for querying large data sets.
 
-![star-schema](/images/star-schema.png)
+![star-schema](../images/star-schema.png)
 
 ## Introduction to the PostgreSQL **CUBE**
 PostgreSQL CUBE is a subclause of the GROUP BY clause. The CUBE allows you to generate multiple grouping sets.
@@ -72,7 +72,7 @@ ORDER BY
     segment;
 ```
 
-![cube-example](/images/cube-example.png)
+![cube-example](../images/cube-example.png)
 
 The following query performs a partial cube:
 
@@ -91,7 +91,7 @@ ORDER BY
     segment;
 ```
 
-![partial-cube-example](/images/partial-cube-example.png)
+![partial-cube-example](../images/partial-cube-example.png)
 
 ## Introduction to the PostgreSQL **ROLLUP**
 
@@ -116,7 +116,7 @@ ORDER BY
     segment;
 ```
 
-![rollup-example](/images/rollup-example.png)
+![rollup-example](../images/rollup-example.png)
 
 The following statement performs a partial roll-up:
 
@@ -135,7 +135,7 @@ ORDER BY
     brand;
 ```
 
-![partial-rollup-example](/images/partial-rollup-example.png)
+![partial-rollup-example](../images/partial-rollup-example.png)
 
 
 ## Excersices
@@ -156,6 +156,6 @@ ORDER BY
 
 8. Generate a report with Internet Sales sub total, grand total per year and month.
 
-9. TBD
+9. Generate a report with the amount of "Pedals" and "Tires and Tubes" category of products in the inventory. Also with the amount of in and outs of each of them on the second half of the year 2006.
 
-10. TBD
+10. Generate a report with the amount of calls, automatic responses and issues raised by the call center operators. On working days during the morning shift, from the 20th working week until the end of the year 2007.

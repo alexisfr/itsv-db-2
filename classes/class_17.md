@@ -1,6 +1,6 @@
-###  [Indexes] (/Class_17_1)
+###  [Indexes](class_17_1.md)
 
-###  [MySQL Full-Text Search] (/Class_17_2)
+###  [MySQL Full-Text Search](class_17_2.md)
 This is a nice feature to take into account.
 
 #### Exercises

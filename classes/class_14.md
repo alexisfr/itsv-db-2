@@ -1,8 +1,8 @@
 ## Functions
 
--  [String Functions] (/Class_14_1)
--  [Date and Time Functions] (/Class_14_2)
--  [Numeric Functions] (/Class_14_3)
+-  [String Functions] (../Class_14_1)
+-  [Date and Time Functions] (../Class_14_2)
+-  [Numeric Functions] (../Class_14_3)
 -  [MySQL - Functions and Operators Reference] (https://dev.mysql.com/doc/refman/5.7/en/functions.html)
 
 ## Exercises

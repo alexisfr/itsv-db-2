@@ -158,7 +158,7 @@ CALL insert_article_tags(1,3);
 
 We got an error message. However, because we declared the handler as a CONTINUE handler, the stored procedure continued the execution. As the result, we got the tag count for the article as well.
 
-![mysql-error-handling](/images/mysql-error-handling.jpg)
+![mysql-error-handling](../images/mysql-error-handling.jpg)
 
 If we change the CONTINUE in the handler declaration to EXIT , we will get an error message only.
 
@@ -192,7 +192,7 @@ Finally, we can try to add a duplicate key to see the effect.
 CALL insert_article_tags_2(1,3);
 ```
 
-![mysql-error-handling-duplicate-keys](/images/mysql-error-handling-duplicate-keys.jpg)
+![mysql-error-handling-duplicate-keys](../images/mysql-error-handling-duplicate-keys.jpg)
 
 ## MySQL handler precedence
 
@@ -231,7 +231,7 @@ CALL insert_article_tags_3(1,3);
 
 As you see the MySQL error code handler is called.
 
-![MySQL-handler-precedence](/images/MySQL-handler-precedence.jpg)
+![MySQL-handler-precedence](../images/MySQL-handler-precedence.jpg)
 
 Using named error condition
 
@@ -327,7 +327,7 @@ If we call the stored procedure  AddOrderItem() and pass a nonexistent order num
 CALL AddOrderItem(10,'S10_1678',1,95.7,1);
 ```
 
-![mysql-signal](/images/mysql-signal.jpg)
+![mysql-signal](../images/mysql-signal.jpg)
 
 ## MySQL RESIGNAL statement
 
@@ -366,4 +366,4 @@ Let’s call the  Divide() stored procedure.
 CALL Divide(10,0,@result);
 ```
 
-![mysql-resignal](/images/mysql-resignal.jpg)
+![mysql-resignal](../images/mysql-resignal.jpg)

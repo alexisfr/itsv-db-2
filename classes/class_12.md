@@ -4,7 +4,7 @@ Normalization is a database design technique which organizes tables in a manner 
 ## Database Normalization Examples 
 Assume a video library maintains a database of movies rented out. Without any normalization, all information is stored in one table as shown below.
 
-![NormalizationTable1](/images/NormalizationTable1.png)
+![NormalizationTable1](../images/NormalizationTable1.png)
 
 Here you see Movies Rented column has multiple values.
 
@@ -17,7 +17,7 @@ Now let's move into 1st Normal Forms
 - Each record needs to be unique.
 
 The above table in 1NF-
-![1NF](/images/1NF.png)
+![1NF](../images/1NF.png)
 1NF Example
 
 #### What is a KEY?
@@ -40,7 +40,7 @@ It has following attributes
 A composite key is a primary key composed of multiple columns used to identify a record uniquely
 
 In our database, we have two people with the same name Robert Phil, but they live in different places.
-![CompositeKey](/images/CompositeKey.png)
+![CompositeKey](../images/CompositeKey.png)
 
 Hence, we require both Full Name and Address to identify a record uniquely. That is a composite key.
 
@@ -51,11 +51,11 @@ Hence, we require both Full Name and Address to identify a record uniquely. That
 It is clear that we can't move forward to make our simple database in 2nd Normalization form unless we partition the table above.
 
 Table: members
-![Table2](/images/Table2.png)
+![Table2](../images/Table2.png)
 
 
 Table: rentals
-![Table1](/images/Table1.png)
+![Table1](../images/Table1.png)
 
 
 We have divided our 1NF table into two tables, members and rentals. Members contains member information. Rentals contains information on movies rented.
@@ -66,7 +66,7 @@ We have introduced a new column called Membership_id which is the primary key fo
 
 In rentals, Membership_ID is the Foreign Key
 
-![foreign_key_table](/images/foreign_key_table.png)
+![foreign_key_table](../images/foreign_key_table.png)
 
 * Foreign Key references the primary key of another Table! It helps connect your Tables
 * A foreign key can have a different name from its primary key
@@ -74,13 +74,13 @@ In rentals, Membership_ID is the Foreign Key
 * Unlike the Primary key, they do not have to be unique. Most often they aren't
 * Foreign keys can be null even though primary keys can not 
 
-![ForeignKeyRelationWithPrimary](/images/ForeignKeyRelationWithPrimary.png)
+![ForeignKeyRelationWithPrimary](../images/ForeignKeyRelationWithPrimary.png)
 
 Why do you need a foreign key?
 
 Suppose someone inserts a record in Table B such as
 
-![WhyDataBaseIsImportant](/images/WhyDataBaseIsImportant.png)
+![WhyDataBaseIsImportant](../images/WhyDataBaseIsImportant.png)
 
 You will only be able to insert values into your foreign key that exist in the unique key in the parent table. This helps in referential integrity. 
 
@@ -94,7 +94,7 @@ A transitive functional dependency is when changing a non-key column, might caus
 
 Consider the **members** table Changing the non-key column Full Name may change Salutation.
 
-![transitive_functional_dependencies](/images/transitive_functional_dependencies.png)
+![transitive_functional_dependencies](../images/transitive_functional_dependencies.png)
 
 ### 3NF (Third Normal Form) Rules
 
@@ -105,11 +105,11 @@ To move our 2NF table into 3NF, we again need to again divide our table.
 
 #### 3NF Example
 
-![2NFTable1](/images/2NFTable1.png)
+![2NFTable1](../images/2NFTable1.png)
 
-![2NFTable2](/images/2NFTable2.png)
+![2NFTable2](../images/2NFTable2.png)
 
-![2NFTable3](/images/2NFTable3.png)
+![2NFTable3](../images/2NFTable3.png)
 
 We have again divided our tables and created a new table which stores Salutations. 
 

@@ -1,9 +1,9 @@
-[Essentials_7.1_01_Architecture_Overview.pptx](/images/Essentials_7.1_01_Architecture_Overview.pptx)
+[Essentials_7.1_01_Architecture_Overview.pptx](../images/Essentials_7.1_01_Architecture_Overview.pptx)
 
-[Essentials_7.1_LabManual_1_Node.docx](/images/Essentials_7.1_LabManual_1_Node.docx)
+[Essentials_7.1_LabManual_1_Node.docx](../images/Essentials_7.1_LabManual_1_Node.docx)
 
 
-[OLAPIntro.pdf](/images/OLAPIntro.pdf)
+[OLAPIntro.pdf](../images/OLAPIntro.pdf)
 
 ```sql 
 Vertica Excercises #1

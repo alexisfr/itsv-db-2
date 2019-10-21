@@ -1,7 +1,7 @@
 ## CARTESIAN PRODUCT
 This is what we saw in previous classes to get results from multiple tables
 
-![cartesian-product](/images/cartesian-product.png)
+![cartesian-product](images/cartesian-product.png)
 
 ## INNER JOIN
 
@@ -9,7 +9,7 @@ This is what we saw in previous classes to get results from multiple tables
 
 ### ON clause
 
-![inner-join](/images/inner-join.png)
+![inner-join](images/inner-join.png)
 
 Example (analyze with explain plan):
 
@@ -31,7 +31,7 @@ Discuss results.
 
 When column names match in both tables the USING clause can be used.
 
-![inner-join-using-clause](/images/inner-join-using-clause.png)
+![inner-join-using-clause](../images/inner-join-using-clause.png)
 
 Example
 
@@ -57,18 +57,18 @@ SELECT *
 
 ### INNER JOIN using three tables
 
-![inner-join-more-tables](/images/inner-join-more-tables.png)
+![inner-join-more-tables](../images/inner-join-more-tables.png)
 
 ### First part
-![inner-join-more-tables-explanation-1](/images/inner-join-more-tables-explanation-1.png)
+![inner-join-more-tables-explanation-1](../images/inner-join-more-tables-explanation-1.png)
 
 
 ### Second part
-![inner-join-more-tables-explanation-2](/images/inner-join-more-tables-explanation-2.png)
+![inner-join-more-tables-explanation-2](../images/inner-join-more-tables-explanation-2.png)
 
 
 ### Final Result
-![inner-join-more-tables-explanation-3](/images/inner-join-more-tables-explanation-3.png)
+![inner-join-more-tables-explanation-3](../images/inner-join-more-tables-explanation-3.png)
 
 Example:
 
@@ -107,7 +107,7 @@ The MySQL NATURAL JOIN is structured in such a way that, columns with the same n
 3. Don’t use ON clause in a NATURAL JOIN.
 
 
-![natural-join](/images/natural-join.png)
+![natural-join](../images/natural-join.png)
 
 Example:
 
@@ -119,7 +119,7 @@ SELECT *
 
 What is going on here?
 
-![what](/images/what.jpeg)
+![what](../images/what.jpeg)
 
 ## Some examples
 
@@ -147,7 +147,7 @@ SELECT *
 ## LEFT OUTER JOIN
 LEFT [OUTER] JOIN joins two tables and fetches rows based on a condition, which match in both tables and including the unmatched rows from the table written before the JOIN clause.
 
-![left-outer-join](/images/left-outer-join.png)
+![left-outer-join](../images/left-outer-join.png)
 
 
 Example:
@@ -171,4 +171,4 @@ AND film_id = 1;
 
 RIGHT [OUTER] JOIN joins two tables and fetches rows based on a condition, which match in both tables and including the unmatched rows available from the table written after the JOIN clause.
 
-![right-outer-join](/images/right-outer-join.png)
+![right-outer-join](../images/right-outer-join.png)
