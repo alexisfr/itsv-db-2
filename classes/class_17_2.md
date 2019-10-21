@@ -43,7 +43,7 @@ To create the FULLTEXT index, you place a list of comma-separated columns in par
 
 The following statement creates a new table named posts that has a FULLTEXT index that includes the post_content column.
 
-````
+```
 CREATE TABLE posts (
   id int(4) NOT NULL AUTO_INCREMENT,
   title varchar(255) NOT NULL,

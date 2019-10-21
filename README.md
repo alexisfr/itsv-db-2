@@ -49,7 +49,7 @@ Databases Engines and Tools to [install](tools.md)
   * [MySQL Stored Function: Class 18_4](classes/class_18_4.md)
   * [Exercises: Class 18_5](classes/class_18_5.md)
 
-* [MySQL Administration: Class 19](classes/Mysql_administration.md)
+* [MySQL Administration: Class 19](classes/mysql_administration.md)
 
 ## Mongo DB
 
