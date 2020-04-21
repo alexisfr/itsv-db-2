@@ -17,7 +17,7 @@ Databases Engines and Tools to [install](tools.md)
 
 * [Sub-queries Exercises: Class 6](classes/class_06.md)
 
-* [Sub-queries in FROM and SELECT: Class 7](classes/class_07.md)
+* [Sub-queries in FROM and SELECT - Exercises : Class 7](classes/class_07.md)
 
 * [Aggregations :  Class 8](classes/class_08.md)
 
