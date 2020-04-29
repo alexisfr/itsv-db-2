@@ -122,9 +122,9 @@ SELECT customer_id,
 	   last_name,
 	   (SELECT MAX(amount) 
 	      FROM payment 
-	     WHERE payment.customer_id = customer.customer_id) AS amount
+	     WHERE payment.customer_id = customer.customer_id) AS max_amount
   FROM customer
- ORDER BY amount DESC,
+ ORDER BY max_amount DESC,
           customer_id DESC;
 ``` 
 
