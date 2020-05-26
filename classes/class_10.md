@@ -1,7 +1,7 @@
 ## CARTESIAN PRODUCT
 This is what we saw in previous classes to get results from multiple tables
 
-![cartesian-product](images/cartesian-product.png)
+![cartesian-product](../images/cartesian-product.png)
 
 ## INNER JOIN
 
@@ -9,7 +9,7 @@ This is what we saw in previous classes to get results from multiple tables
 
 ### ON clause
 
-![inner-join](images/inner-join.png)
+![inner-join](../images/inner-join.png)
 
 Example (analyze with explain plan):
 
