@@ -1,7 +1,7 @@
 ##  Constraints and Triggers
 
--  [Constraints] (class_16_1.md)
--  [Triggers] (class_16_2.md)
+-  [Constraints](class_16_1.md)
+-  [Triggers](class_16_2.md)
 
 
 ## Exercises 
