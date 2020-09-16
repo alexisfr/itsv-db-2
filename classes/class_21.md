@@ -26,7 +26,7 @@ docker run -d --name redis -p 6379:6379 redis
 ```
 To run commands
 ```
-docker exec -it redis /bin/bash
+docker exec -it redis /bin/sh
 redis-cli
 ```
 ### Configuration
