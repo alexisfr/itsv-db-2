@@ -4,7 +4,9 @@ Data Definition Language consist of commands to create and drop database objects
 
 ### Data types
 
-String Datatypes
+https://dev.mysql.com/doc/refman/5.7/en/data-types.html
+
+#### String Datatypes
 
 |  Syntax | Maximum Size                                     | Explanation                                                                                                                   |
 |------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
@@ -17,7 +19,7 @@ String Datatypes
 | BINARY(size)     | Maximum size of 255 characters.                  | Where size is the number of binary characters to store. Fixed-length strings. Space padded on right to equal size characters. |
 | VARBINARY(size)  | Maximum size of 255 characters.                  | Where size is the number of characters to store. Variable-length string.                                                      |
 
-Numeric Datatypes
+#### Numeric Datatypes
 
 |  Syntax      | Maximum Size                                                                                                                | Explanation                                                                                                                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,7 +42,7 @@ Numeric Datatypes
 | BOOL                  |                                                                                                                             | Treated as a boolean data type where a value of 0 is considered to be FALSE and any other value is considered to be TRUE. Synonym for TINYINT(1)                                  |
 | BOOLEAN               |                                                                                                                             | This is a synonym for the BOOL datatype.                                                                                                                                          |
 
-Date/Time Datatypes
+#### Date/Time Datatypes
 
 |  Syntax | Maximum Size                                                          | Explanation                       |
 |------------------|-----------------------------------------------------------------------|-----------------------------------|
@@ -50,7 +52,7 @@ Date/Time Datatypes
 | TIME             | Values range from -838:59:59 to 838:59:59.                            | Displayed as HH:MM:SS.            |
 | YEAR[(2 or 4)]      | Year value as 2 digits or 4 digits.                                   | Default is 4 digits.              |
 
-Large Object (LOB) Datatypes
+#### Large Object (LOB) Datatypes
 
 | Syntax | Maximum Size                                     | Explanation                                                                                        |
 |------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------|
@@ -59,7 +61,7 @@ Large Object (LOB) Datatypes
 | MEDIUMBLOB       | Maximum size of 16,777,215 bytes.                |                                                                                                    |
 | LONGTEXT         | Maximum size of 4GB or 4,294,967,295 characters. |                                                                                                    |
 
-Enum Type
+#### Enum Type
 
 |  Syntax | Maximum Size                                     | Explanation                                                                                        |
 |------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------|
