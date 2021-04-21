@@ -125,6 +125,6 @@ WHERE address LIKE '%\_%';
 ```
 ## Arithmetics
 ```sql
-SELECT title, description, rental_rate * 15 AS "In Pesos" 
+SELECT title, description, rental_rate * 150 AS "In Pesos" 
 FROM film
 ```
