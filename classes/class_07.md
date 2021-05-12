@@ -79,15 +79,15 @@ SELECT title,replacement_cost
 ```sql
 SELECT title,description,
 rental_rate,
-rental_rate * 15 AS in_pesos 
+rental_rate * 150 AS in_pesos 
   FROM film 
- WHERE rental_rate * 15 > 10.0 
-   AND rental_rate * 15 < 70.0;
+ WHERE rental_rate * 150 > 10.0 
+   AND rental_rate * 150 < 70.0;
 
 -- Can be written
 
 SELECT * 
-  FROM (SELECT title,description,rental_rate,rental_rate * 15 AS in_pesos 
+  FROM (SELECT title,description,rental_rate,rental_rate * 150 AS in_pesos 
           FROM film) g 
  WHERE in_pesos > 10.0 
    AND in_pesos < 70.0; 
