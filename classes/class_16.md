@@ -5,7 +5,7 @@
 
 
 ## Exercises 
-Needs the **employee** table (defined in the [triggers](../Class_16_2) section) created and populated.
+Needs the **employee** table (defined in the [triggers](Class_16_2) section) created and populated.
 
 1-  Insert a new employee to , but with an null email. Explain what happens.
 
